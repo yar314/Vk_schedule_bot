@@ -56,7 +56,25 @@ longpoll = VkBotLongPoll(authorize, group_id=207217384)
 
 #text,hour,minute,weekday
 
-subs = [["Circuit theory",8,50,4],["Elementary Chinese",10,50,4],["Complex analysis",12,50,4]]
+subs = [
+        ["Circuit theory fri 9:00 Canvas: https://oc.sjtu.edu.cn/courses/33999/external_tools/162",5,50,4],
+        ["Elementary Chinese fri 11:00 VooV: 405119539 8988",7,50,4],
+        ["Complex analysis fri 13:00 VooV: 684404375 8988",9,50,4],
+    
+        ["Theoretical mechanics mon 5:00 Canvas: https://oc.sjtu.edu.cn/courses/33925/external_tools/162",1,50,0],
+    
+        ["Physics tue 5:00 Canvas: https://oc.sjtu.edu.cn/courses/33874/external_tools/162",1,50,1],
+        ["Circuit theory tue 11:00 Canvas: https://oc.sjtu.edu.cn/courses/33999/external_tools/162",7,50,1],
+        ["Probability and statistics tue 13:00 VooV: 491570291 9373",9,50,1],
+        
+        ["Elementary chinese wed 11:00 VooV: 405119539 8988",7,50,2],
+        ["Theoretical mechanics wed 13:00 Canvas: https://oc.sjtu.edu.cn/courses/33925/external_tools/162",9,50,2],
+    
+        ["Numerical methods thu 11:00 Canvas: https://oc.sjtu.edu.cn/courses/34120/external_tools/162",7,50,3],
+        ["Physics tue 13:00 Canvas: https://oc.sjtu.edu.cn/courses/33874/external_tools/162",9,50,3],
+    
+        ["Probability and statistics sat 11:00 VooV: 491570291 9373",7,50,5],
+       ]
 
 while(1):
     now = datetime.datetime.now()
@@ -67,13 +85,25 @@ while(1):
             time.sleep(60)
             
     events = longpoll.check()
+    k = 0
     
     if len(events)>0:
         for event in events:
             reseived_message = event.message.get('text')
             sender = event.chat_id
-            if reseived_message == 'coming up':
+            if reseived_message == 'coming up' or 'Coming up':
                 for sub in subs:
-                    if now.hour < sub[1] or now.minute < sub[2] or now.weekday() < sub[3]:
+                    if now.hour <= sub[1] and now.minute <= sub[2] and now.weekday() == sub[3]:
                         write_message(1, sub[0])
-                        time.sleep(60)
+                        k = 1
+                        break  
+                if k == 0:
+                    for sub in subs:
+                        if sub[3] == now.weekday()+1:
+                            write_message(1, sub[0])
+                            k = 1
+                            break
+                if k == 0:
+                     write_message(1, subs[3][0])
+                k = 0
+            if reseived_message == 'coming up' or 'Coming up':
