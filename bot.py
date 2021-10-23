@@ -94,16 +94,34 @@ while(1):
             if reseived_message == 'coming up' or 'Coming up':
                 for sub in subs:
                     if now.hour <= sub[1] and now.minute <= sub[2] and now.weekday() == sub[3]:
-                        write_message(1, sub[0])
+                        write_message(sender, sub[0])
                         k = 1
                         break  
                 if k == 0:
                     for sub in subs:
                         if sub[3] == now.weekday()+1:
-                            write_message(1, sub[0])
+                            write_message(sender, sub[0])
                             k = 1
                             break
                 if k == 0:
                      write_message(1, subs[3][0])
                 k = 0
-            if reseived_message == 'coming up' or 'Coming up':
+            if reseived_message == 'cow':
+                write_message(sender,   .        .
+           \'.____.'/
+          __'-.  .-'__                         .--.
+          '_i:'oo':i_'---...____...----i"""-.-'.-"\\
+            /._  _.\       :       /   '._   ;/    ;'-._
+           (  o  o  )       '-.__.'       '. '.     '-."
+            '-.__.-' _.--.                 '-.:
+             : '-'  /     ;   _..--,  /       ;
+             :      '-._.-'  ;     ; :       :
+              :  `      .'    '-._.' :      /
+               \  :    /    ____....--\    :
+                '._\  :"""""    '.     !.   :
+                 : |: :           'www'| \ '|
+                 | || |              : |  | :
+                 | || |             .' !  | |
+                .' !| |            /__I   | |
+               /__I.' !                  .' !
+                  /__I                  /__I   fsc)
