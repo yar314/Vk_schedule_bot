@@ -57,23 +57,20 @@ longpoll = VkBotLongPoll(authorize, group_id=207217384)
 #text,hour,minute,weekday
 
 subs = [
-        ["Circuit theory fri 9:00 Canvas: https://oc.sjtu.edu.cn/courses/33999/external_tools/162",5,50,4],
-        ["Elementary Chinese fri 11:00 VooV: 405119539 8988",7,50,4],
-        ["Complex analysis fri 13:00 VooV: 684404375 8988",9,50,4],
+        ["Physics fri 9:55 Canvas: https://oc.sjtu.edu.cn/courses/43746/external_tools/162",6,45,4],
+        ["Elementary Chinese fri 11:55 VooV: 960944269 6821",8,45,4],
     
-        ["Theoretical mechanics mon 5:00 Canvas: https://oc.sjtu.edu.cn/courses/33925/external_tools/162",1,50,0],
+        ["Solid mechanics mon 7:55 Canvas: https://oc.sjtu.edu.cn/courses/39700/external_tools/162",4,45,0],
+        ["Thermodynamics mon 11:00 Canvas: https://oc.sjtu.edu.cn/courses/39699/external_tools/162",7,50,0],
+        ["Elementary Chinese mon 13:00 VooV: 960944269 6821",9,50,0],
     
-        ["Physics tue 5:00 Canvas: https://oc.sjtu.edu.cn/courses/33874/external_tools/162",1,50,1],
-        ["Circuit theory tue 11:00 Canvas: https://oc.sjtu.edu.cn/courses/33999/external_tools/162",7,50,1],
-        ["Probability and statistics tue 13:00 VooV: 491570291 9373",9,50,1],
+        ["Aerodynamics tue 7:55 Canvas: https://oc.sjtu.edu.cn/courses/39723/external_tools/162",4,45,1],
+        ["Design and manufacture tue 11:00 Canvas: https://oc.sjtu.edu.cn/courses/39421/external_tools/162",7,50,1],
         
-        ["Elementary chinese wed 11:00 VooV: 405119539 8988",7,50,2],
-        ["Theoretical mechanics wed 13:00 Canvas: https://oc.sjtu.edu.cn/courses/33925/external_tools/162",9,50,2],
+        ["Thermodynamics wed 9:00 Canvas: https://oc.sjtu.edu.cn/courses/39699/external_tools/162",5,50,2],
     
-        ["Numerical methods thu 11:00 Canvas: https://oc.sjtu.edu.cn/courses/34120/external_tools/162",7,50,3],
-        ["Physics tue 13:00 Canvas: https://oc.sjtu.edu.cn/courses/33874/external_tools/162",9,50,3],
-    
-        ["Probability and statistics sat 11:00 VooV: 491570291 9373",7,50,5],
+        ["Engineering, Social and Professional ethics thu 7:55 Canvas: https://oc.sjtu.edu.cn/courses/39689/external_tools/162",4,45,3],
+        ["Design and manufacture thu 11:00 Canvas: https://oc.sjtu.edu.cn/courses/39421/external_tools/162",7,50,3],
        ]
 
 while(1):
