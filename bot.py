@@ -4,6 +4,7 @@ import datetime
 import time
 import vk_api
 import pyjokes
+import cowsay
 from vk_api.utils import get_random_id
 from vk_api.bot_longpoll import VkBotLongPoll, VkBotEventType
 def write_message(sender, message):
@@ -127,13 +128,7 @@ while(1):
                 for sub in subs:
                     sup=sup+sub[0]+"\n"
                 write_message(sender, sup)
-            if reseived_message[0:5] == 'frame':
-                text=''
-                for i in range(len(reseived_message[6:])):
-                    text=text+'—'
-                text=text+'\n| '+reseived_message[6:]+' |\n'
-                for i in range(len(reseived_message[6:])):
-                    text=text+'—'
-                write_message(sender, text)
+            if reseived_message[0:6] == 'cowsay' or reseived_message[0:6] == 'Cowsay':
+                write_message(sender, cowsay.get_output_string('cow', reseived_message[7:].replace('\n', '\n|').replace(' ',' ')))
             if reseived_message == 'tell a joke' or reseived_message == 'Tell a joke':
                 write_message(sender, pyjokes.get_joke())
