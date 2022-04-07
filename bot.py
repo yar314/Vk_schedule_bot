@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 import datetime
 import time
 import vk_api
