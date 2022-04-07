@@ -55,7 +55,7 @@ def check(self):
             self.update_longpoll_server()
 
         return []
-token = "871352a27a2e0e28118972f4ac850f5b5e3d9bf492cc4239bdd698daef723978b09ba2437fe3545a6409f"
+token = ""
 authorize = vk_api.VkApi(token = token)
 longpoll = VkBotLongPoll(authorize, group_id=207217384)
 
